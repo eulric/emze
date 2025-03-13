@@ -1,0 +1,36 @@
+import reflex as rx
+
+from .components.stats_cards import stats_cards_group
+from .views.navbar import navbar
+from .views.table import main_table
+from .components.landing_main import hero
+
+
+def index() -> rx.Component:
+    return rx.vstack(
+        navbar(),
+        stats_cards_group(),
+        rx.box(
+            main_table(),
+            width="100%",
+        ),
+        width="100%",
+        spacing="6",
+        padding_x=["1.5em", "1.5em", "3em"],
+    )
+
+
+    
+
+
+app = rx.App(
+    theme=rx.theme(
+        appearance="dark", has_background=True, radius="large", accent_color="grass"
+    ),
+)
+
+app.add_page(
+    index,
+    title="Customer Data",
+    description="Emze Construction Data Page",
+)
