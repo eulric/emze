@@ -108,7 +108,7 @@ def stats_cards_group() -> rx.Component:
             "$",
         ),
         stats_card(
-            "Total Delivers",
+            "Total Completed",
             State.current_month_values.num_delivers,
             State.previous_month_values.num_delivers,
             State.delivers_change,

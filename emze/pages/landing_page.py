@@ -61,8 +61,6 @@ def headerBox():
             rx.box(
                 rx.heading("EMZE Construction", size="9", align="center"),
                 rx.text("Design - Integrate - Develop", size="6", align="center"),
-                rx.center(rx.button("Sign up", align="center",),
-                          padding="80px"),
                 align="center",
                 line_height="9",
                 padding_top="150px",
