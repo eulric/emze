@@ -42,7 +42,7 @@ def open_dialog(title: str, description: str) -> rx.Component:
         is_open=True,
     )
 
-def approach_section() -> rx.Component:
+# def approach_section() -> rx.Component:
     sections = [
         ("landing_images/person1.png", "Estimation", "Working with clients to capture their vision, meet their priorities."),
         ("landing_images/person2.png","Innovation" , "Precisely budgeting to keep costs in check."),
@@ -85,6 +85,45 @@ def approach_section() -> rx.Component:
         justify_content="center",
     )
 
+def approach_section() -> rx.Component:
+    sections = [
+        ("landing_images/person1.png", "Estimation", "Working with clients to capture their vision, meet their priorities."),
+        ("landing_images/person2.png", "Innovation", "Precisely budgeting to keep costs in check."),
+        ("landing_images/person3.png", "Collaboration", "Incorporating the latest solutions in custom home construction."),
+    ]
+
+    return rx.box(
+        rx.vstack(
+            rx.heading("Our Approach", font_size="32px", font_weight="bold"),
+            rx.hstack(
+                *[
+                    rx.box(
+                        rx.vstack(
+                            rx.heading(title, font_size="24px", font_weight="semibold"),
+                            rx.image(src=image, width="300px", height="300px", object_fit="cover", border_radius="8px"),
+                            rx.text(description, font_size="18px"),
+                            align="center",
+                            padding="5",
+                        ),
+                        spacing="4",
+                        width="33%",
+                    )
+                    for image, title, description in sections
+                ],
+                spacing="6",
+                justify_content="space-between",
+                align_items="center",
+            ),
+            spacing="6",
+            align="center",
+            max_width="1000px",
+            width="100%",
+        ),
+        padding_y="100px",
+        bg="gray.50",
+        display="flex",
+        justify_content="center",
+    )
 
 
 # Footer 

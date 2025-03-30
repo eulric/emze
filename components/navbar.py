@@ -10,7 +10,7 @@ def navi() -> rx.Component:
     return rx.fragment(
         rx.desktop_only(
             rx.hstack(
-                rx.text("EMZE Construction", font_size="24px", font_weight="bold", color="white"),
+                rx.text("MZ Construction", font_size="24px", font_weight="bold", color="white"),
                 rx.spacer(),
                 rx.link("Home", href="/", color="white"),
                 rx.link("Projects", href="/how-we-build", color="white"),
@@ -31,7 +31,7 @@ def navi() -> rx.Component:
             rx.hstack(
                 rx.hstack(
                     rx.image(
-                        src="/logo.jpg",
+                        src="/favicon.png",
                         width="2em",
                         height="auto",
                         border_radius="25%",
