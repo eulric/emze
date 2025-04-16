@@ -63,3 +63,16 @@ def navi() -> rx.Component:
         z_index="1000",
         box_shadow="lg",
     )
+
+
+# Footer 
+def footer() -> rx.Component:
+    return rx.box(
+        rx.text("© 2025 EMZE Construction. All rights reserved.", color="white", text_align="center", font_size="14px"),
+        bg="rgba(0, 0, 0, 0.8)",
+        padding="20px",
+        width="100%",
+        position="relative",
+        bottom="0",
+        box_shadow="lg",
+    )
