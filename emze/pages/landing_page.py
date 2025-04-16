@@ -164,9 +164,49 @@ def about() -> rx.Component:
         ),),
     ),
 
+def contact_us() -> rx.Component:
+    return rx.center(
+        rx.vstack(
+            rx.heading("Contact Us", size="7", font_weight="bold", color="white"),
+            rx.spacer(),
+            rx.separator(size="4", color="white"),
 
-def  contact_us():
-    
+            rx.flex(
+                rx.box(
+                rx.text(
+                    "For inquiries, quotes, or to discuss your project needs, please reach out to us. "
+                    "We look forward to collaborating with you and bringing your vision to life.",
+                    font_size="1.125rem",
+                    margin_bottom="1.5rem",
+                    text_align="center",
+                    align="center",
+                ),
+                ),
+                rx.box(
+                rx.button("Get in Touch", color_scheme="blue", size="4", width="200px"),
+                ),
+                wrap="wrap",
+                justify="center",
+                align="center",
+                direction="column",
+            ),
+            item_align="center",
+            align="center",
+            width=["100%", "50%"],
+            padding="1rem",
+        ),
+                
+    max_width="1200px",
+    width="100%",
+    padding_y="4rem",
+    id="services",
+)
+
+
+
+
+
+
 
 # Main Page Layout
 def index() -> rx.Component:
@@ -175,13 +215,10 @@ def index() -> rx.Component:
         landing_image(),
         services(),
         about(),
+
+   
+        contact_us(),
                 
-
-
-
-
-
-
         
         footer(),
         height="100vh",
