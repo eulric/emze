@@ -1,5 +1,8 @@
 import reflex as rx
+from ..components.contact_form import ContactState, contact_box
 from ..components.navbar import navi, footer
+
+
 
 
 
@@ -164,6 +167,9 @@ def about() -> rx.Component:
         ),),
     ),
 
+
+
+
 def contact_us() -> rx.Component:
     return rx.center(
         rx.vstack(
@@ -181,10 +187,33 @@ def contact_us() -> rx.Component:
                     text_align="center",
                     align="center",
                 ),
+                
                 ),
+
                 rx.box(
-                rx.button("Get in Touch", color_scheme="blue", size="4", width="200px"),
+                    # contact_box(),
+                    
+                    rx.dialog.root(
+                        rx.dialog.trigger(rx.button("Send a Message", color_scheme="teal")),
+                        rx.dialog.content(
+                            rx.dialog.title("Contact Us"),
+                            rx.dialog.description(
+                                "We’d love to hear from you. Fill out the form below."
+                            ),
+                            rx.dialog.description(
+                                contact_box(),
+                            ),
+                            rx.dialog.close(
+                                rx.button("Close Dialog", size="3", align="right", variant="ghost", mt="2"),
+                            ),
+                        ),
+                        width="100%",
+                        
+                    ),
+                    align="center",
+
                 ),
+
                 wrap="wrap",
                 justify="center",
                 align="center",
@@ -194,14 +223,12 @@ def contact_us() -> rx.Component:
             align="center",
             width=["100%", "50%"],
             padding="1rem",
+            max_width="1200px",
+            padding_y="4rem",
         ),
                 
-    max_width="1200px",
-    width="100%",
-    padding_y="4rem",
-    id="services",
-)
 
+)
 
 
 
