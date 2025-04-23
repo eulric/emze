@@ -1,6 +1,4 @@
 import reflex as rx
-
-
 from .pages.landing_page import index
 from .pages.dashboard import  dash_board
 

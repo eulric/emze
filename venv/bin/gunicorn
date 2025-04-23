@@ -1,4 +1,4 @@
-#!/home/jayson/Documents/emze/venv/bin/python3
+#!/home/vps-admin/emze/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

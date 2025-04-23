@@ -168,13 +168,28 @@ class State(rx.State):
             f"User {self.current_user.name} has been added.", position="bottom-right"
         )
 
+    # def update_customer_to_db(self, form_data: dict):
+    #     with rx.session() as session:
+    #         customer = session.exec(
+    #             select(Customer).where(Customer.id == self.current_user.id)
+    #         ).first()
+    #         form_data.pop("id", None)
+    #         customer.set(**form_data)
+    #         session.add(customer)
+    #         session.commit()
+    #     self.load_entries()
+    #     return rx.toast.info(
+    #         f"User {self.current_user.name} has been modified.",
+    #         position="bottom-right",
+    #     )
     def update_customer_to_db(self, form_data: dict):
         with rx.session() as session:
             customer = session.exec(
                 select(Customer).where(Customer.id == self.current_user.id)
             ).first()
             form_data.pop("id", None)
-            customer.set(**form_data)
+            for key, value in form_data.items():
+                setattr(customer, key, value)
             session.add(customer)
             session.commit()
         self.load_entries()
